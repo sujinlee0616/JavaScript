@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> The Switch Statement </title>
+<script>
+	var site = prompt("What do you like best among Google, Naver and Daum?", "");
+	var url;
+
+	switch(site){
+		case "Google":url = "www.google.com";
+		break;
+		case "Naver":url = "www.naver.com";
+		break;
+		case "Daum":url = "www.daum.net";
+		break;
+		default:alert("You can only choose among those three websites.");
+	}
+	if(url) location.href="http://" + url;
+
+</script>
+</head>
+<body>
+</body>
+</html>

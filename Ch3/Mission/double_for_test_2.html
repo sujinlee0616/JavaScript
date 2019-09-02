@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> Create a five-row, five-column table and write the data from 1 to 25 using double for loop. </title>
+
+<style>
+	table{
+		border: 1px solid black;
+	}
+	
+</style>
+
+<script>
+	/* Create table*/
+	document.write("<table>");
+  for(var i=1; i<=5; i++){
+		document.write("<tr>");
+		for(var j=1; j<=5; j++){
+			k = 5*i+j-5;
+			document.write("<td>"+k+"</td>");
+		}
+		document.write("</tr>");
+	}
+	document.write("</table>");
+
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

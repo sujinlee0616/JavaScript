@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> in if </title>
+<script>
+	var id = "easy1004";
+	var pw = "112233";
+
+	var user_id = prompt("What is your ID?","");
+
+	if(id==user_id){
+		var user_pw = prompt("What is your password?", "");
+		if(pw==user_pw){
+			document.write("Hello, "+user_id);
+		}else{
+			alert("Wrong password! Try again.");
+			location.reload();
+		}
+	}else{
+		alert("Wrong ID! Try again.");
+		location.reload();
+	}
+
+</script>
+</head>
+<body>
+</body>
+</html>
