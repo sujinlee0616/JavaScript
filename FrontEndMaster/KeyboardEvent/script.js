@@ -1,6 +1,10 @@
 
 // 문서 객체 접근
-var boy = document.getElementsByClassName('boy');
+var boy = document.getElementById('boy');  //OK 
+//var boy = document.getElementsByTagName("figure")[0]; //OK
+//var boy = document.getElementsByClassName('boy'); // Error. 
+//getElementsByClassName 쓰면 script.js:42 Uncaught TypeError: boy.addEventListener is not a function 에러 발생 
+//boy가 한 개가 아니라서 그런듯. 
 
 // 옛날에 많이 사용되던 이벤트 모델 (on이 들어감)
 // window.onkeydown = function(){};
@@ -25,19 +29,30 @@ window.addEventListener("keydown", function(e){
   }
 });
 
-boy.addEventListener('animationend',stand);
 
-function stand(){
+//boy.addEventListener('animationend',stand);
+
+  // for (i = 0; i < boy.length; i++) {
+  //   boy[i].addEventListener("animationend", stand);
+  // }
+
+  // if(boy){
+  //}
+
+
+boy.addEventListener('animationend', stand);
+
+function stand() {
   console.log('finish animation');
   boy.classList.remove('jump');
 }
 
-function jump(){
+function jump() {
   boy.classList.add('jump');
 }
 
-function getDistanceX(){
-  return window.parseInt(boy.style.transform.replace('translateX(',''), 10) || 0;
+function getDistanceX() {
+  return window.parseInt(boy.style.transform.replace('translateX(', ''), 10) || 0;
   // 1) boy.style.transform || 0;
   // 처음 boy.style.transform 하면 null ==> 거짓
   // ||: 앞의 값이 거짓이면 뒤의 값 반환 ==> 0을 초기값으로 줬다. 
@@ -45,17 +60,20 @@ function getDistanceX(){
   // -30px 만 가져오려고 앞의 문자 잘랐음 
 };
 
-function moveLeft(){
-  console.log(disX); 
+function moveLeft() {
+  console.log(disX);
   var disX = getDistanceX() - 30;  // disX-=30; 과 같은 표현 
-  boy.style.transform = 'translateX(' +disX+ 'px) rotateY(180deg)';
+  boy.style.transform = 'translateX(' + disX + 'px) rotateY(180deg)';
 }
-function moveRight(){
-  console.log(disX); 
+function moveRight() {
+  console.log(disX);
   var disX = getDistanceX() + 30;  // disX+=30; 과 같은 표현 
-  boy.style.transform = 'translateX(' +disX+ 'px) rotateY(0deg)';
-  
+  boy.style.transform = 'translateX(' + disX + 'px) rotateY(0deg)';
+
 }
+
+  
+
 
 // -----------------------------------------------------------------------------------------
 // 키보드 이벤트 핸들링 (Keyboard Event Handling)
