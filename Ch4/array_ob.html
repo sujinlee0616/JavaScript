@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // <배열 객체 형식>
+        // 1) var 참조변수 = new Array();
+        //    참조변수[0]=값1; 참조변수[1]=값2; ....
+        var korean1 = new Array();
+        korean1[0]="가"; korean1[1]="나"; korean1[2]="다";
+        // 2) var 참조변수 = new Array(값1, 값2, 값3, ...)
+        var korean2 = new Array("가", "나", "다");
+        // 3) var 참조변수 = [값1, 값2, 값3, ...]
+        var korean3 = ["가","나","다"];
+        for(var i=0; i<3; i++){
+            document.write(korean1[i]);
+        }
+        document.write("<br>");
+        for(var i=0; i<3; i++){
+            document.write(korean2[i]);
+        }
+        document.write("<br>");
+        for(var i=0; i<3; i++){
+            document.write(korean3[i]);
+        }
+        document.write("<br>");
+        
+        // [배열 값 가져오기] : 참조변수[index번호];
+        var arr=[30, "따르릉", true];
+        document.write("<h3>배열 값 가져오기 (1)</h3>");
+        document.write(arr[0],"<br>");
+        document.write(arr[1],"<br>");
+        document.write(arr[2],"<br>");
+
+        document.write("<h3>배열 값 가져오기 (2)</h3>");
+        for(var i=0; i<arr.length; i++){
+            document.write(arr[i],"<br>");
+        }
+
+        document.write("<h3>배열 값 가져오기 (3)</h3>");
+        for(i in arr){
+            document.write(arr[i],"<br>");
+        }
+
+        // <배열 객체 메서드1>
+        // join(연결문자): 배열 객체 데이터를 연결문자로 연결해서 하나의 문자형 데이터로 반환
+        // reverse() : 데이터를 순서를 역으로 바꿔서 반환
+        // sort() : 오름차순으로 정렬
+        // slice(start#,end#) : [start#] ~ [end#-1] 까지의 데이터를 잘라서 배열로 반환
+        // splice() : 배열에서 특정 인덱스의 데이터를 삭제하고 거기에 새로운 데이터 삽입
+        // concat() : 2개의 배열 객체를 하나의 배열로 결합함. concatenate 연결시키다. 사슬같이 잇다. 
+        // pop() : 맨 마지막 데이터 삭제 
+        // push(new data) : 맨 마지막에 새 데이터 삽입
+        // shift() : 맨 처음 데이터 삭제 
+        // unshift(new data) : 맨 처음에 데이터 삽입 
+        // length() : 배열 길이 반환 
+
+        var arr_1=["사당", "교대", "방배", "강남"];
+        var arr_2=["신사", "압구정", "옥수"];
+
+        var result  = arr_1.join("-");
+        console.log(result);
+
+        result = arr_1.concat(arr_2);
+        console.log(result);
+
+        result = arr_1.slice(0,4);
+        console.log(result);
+
+        arr_1.sort();
+        console.log(arr_1); 
+
+        arr_2.reverse();
+        console.log(arr_2); 
+
+        // <배열 객체 메서드2>
+        var greenArr = ["교대", "방배", "강남"];
+        var yellowArr = ["미금", "정자", "수서"];
+
+        greenArr.splice(2,1,"서초","역삼");
+        document.write(greenArr,"<br>");
+
+        var splice_test=["가","나","다","라","마"];
+        splice_test.splice(0,3,"a");
+        document.write(splice_test,"<br>");
+
+
+
+
+
+
+    </script>
+</body>
+</html>

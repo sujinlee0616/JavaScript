@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // <내장객체>
+    // - 정의: js 엔진에 내장된 객체. 문자, 날짜, 배열, 수학, 정규식 객체.
+    // - 생성: 참조변수(인스턴스 이름) = new 생성함수();
+
+    // <날짜 객체 메서드>
+
+    // 1. 날짜 정보를 가져올 때 (GET)
+    // getFullYear(): 년도.
+    // getMonth(): 월. 0~11.
+    // getDate(): 일. 1~31.
+    // getDay(): 요일. 0(일) ~ 6(토)
+    // getHours(): 시.
+    // getMinutes(): 분.
+    // getSeconds(): 초.
+    // getMilliseconds(): 밀리초.
+    // getTime(): 1970.01.01부터 경과된 시간을 밀리초로 표현.
+    // toGMTString(): GMT 표준 표기 방식으로 문자형 데이터로 반환.
+
+    // 2. 날짜 정보를 수정할 때 (SET)
+    // setFullYear(), setMonth(), setDate(), 
+    // setDay()는 없음. setDate()로 날짜 바꾸면 day(요일)도 자동으로 바뀜.
+    // setHours(), setMinutes(), setSeconds(), setMilliseconds(), setTime()
+    // toLocaleString(): 운영 시스템 푝 방식으로 문자형 데이터로 반환.
+
+    // <날짜 객체 ex1)>
+    var today=new Date();
+    var nowMonth=today.getMonth(),
+    nowDate=today.getDate(),
+    nowDay=today.getDay();
+
+    document.write("<h1>오늘 날짜 정보</h1>");
+    document.write("현재 월: "+nowMonth,"<br>");
+    document.write("현재 일: "+nowDate,"<br>");
+    document.write("현재 요일: "+nowDay,"<br>");
+
+    var worldcup=new Date(2002,4,31);
+    var theMonth=worldcup.getMonth(),
+    theDate=worldcup.getDate(),
+    theDay=worldcup.getDay();
+
+    document.write("<h1>월드컵 날짜 정보</h1>");
+    document.write("2002 월드컵 몇 월: "+theMonth, "<br>");
+    document.write("2002 월드컵 몇 일: "+theDate, "<br>");
+    document.write("2002 월드컵 무슨 요일: "+theDay, "<br>");
+
+    // <날짜객체 ex2)>
+    var today=new Date();
+    var nowYear=today.getFullYear();
+
+    var theDate=new Date(nowYear,11,31);
+    var diffDate=theDate.getTime() - today.getTime();
+
+    var result=Math.ceil(diffDate/(60*1000*60*24));
+    document.write("연말 D-day: "+result+"일 남았습니다.");
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

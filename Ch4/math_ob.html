@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+
+    // <수학 객체 메서드>
+    // Math.abs(숫자): 숫자의 절대값 반환
+    // Math.max(숫자1,숫자2,숫자3,...): 최대값 반환
+    // Math.min(숫자1,숫자2,숫자3,...): 최소값 반환
+    // Math.pow(숫자,n) : 숫자의 n제곱값 반환
+    // ex) console.log(Math.pow(2,5)); ==> 2^5 = 32
+    // Math.random(): 랜덤수 발생.
+    // ex) 0~n까지의 난수 발생: Math.floor(Math.random()*(n+1));
+    // ex) n~m까지의 난수 발생: Math.floor(Math.random()*(m-n+1))+n;
+    // Math.round(숫자): 소수 첫째자리에서 반올림해서 정수 반환
+    // Math.ceil(숫자): 소수 첫째자리에서 올림하여 정수 반환
+    // Math.floor(숫자): 소수 첫째자리에서 내림하여 정수 반환  
+    // Math.sqrt(숫자): 제곱근값 반환
+    // Math.PI: 원주율 상수 3.14.... 반환
+
+
+    // <수학객체 ex1)>
+    var num=2.1234;
+
+    var maxNum=Math.max(10,5,8,30),
+    minNum=Math.min(10,5,8,30),
+    roundNum=Math.round(num),
+    floorNum=Math.floor(num),
+    ceilNum=Math.ceil(num),
+    rndNum=Math.random(),
+    piNum=Math.PI;
+
+    document.write(maxNum,"<br>");
+    document.write(minNum,"<br>");
+    document.write(roundNum,"<br>");
+    document.write(floorNum, "<br>");
+    document.write(ceilNum, "<br>");
+    document.write(rndNum, "<br>");
+    document.write(piNum, "<br>");
+
+
+    // <수학객체 ex2)>
+    document.write("<h1>컴퓨터가 가위,바위,보 중 뭘 낼지 맞추기</h1>");
+
+    var game=prompt("가위,바위,보 중 컴퓨터는 어떤 걸 낼까요?","가위");
+    var gameNum;
+    switch(game){
+    case "가위":
+      gameNum=1; break;
+    case "바위":
+      gameNum=2; break;
+    case "보":
+      gameNum=3; break;
+    default: alert("잘못 작성했습니다.");
+      location.reload();
+    }
+
+    var com=Math.ceil(Math.random()*3);
+    document.write("<img src=\"images/math_img_"+com+".jpg\">");
+
+    if(gameNum==com){
+      document.write("<img src=\"images/game_1.jpg\">");
+    }
+    else{
+      document.write("<img src=\"images/game_2.jpg\">");
+    }
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
