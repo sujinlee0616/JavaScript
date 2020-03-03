@@ -5,13 +5,14 @@ const COORDS = "coords";
 function getWeather(lat,lng){ //latitude, longitutde
     // API 호출 
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`
-    ).then(function(response){
+    ).then(function(response){ 
         //console.log(response.json());
         return response.json();
     }).then(function(json){
         //console.log(json);
         const temperature = json.main.temp;
         const place = json.name;
+        // weather 변수에 뿌려라 
         weather.innerText=`${temperature}°C @ ${place}`;
     });
 }
@@ -19,7 +20,6 @@ function getWeather(lat,lng){ //latitude, longitutde
 function saveCoords(coordsObj){
     localStorage.setItem(COORDS, JSON.stringify(coordsObj)); 
     // localStorage에는 오직 String만 저장 가능 ==> JSON.stringify로 ojbect를 string으로 변환해서 저장
-
 }
 
 function handleGeoSuccess(position){

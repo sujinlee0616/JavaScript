@@ -12,6 +12,7 @@ let toDos = []; // 할 일 목록을 array로 만들자
 // }
 
 function deleteToDo(event){
+    // console.dir(event.target);
     // console.log(event.target.parentNode); 
     // event target인 button의 id를 알기 위해서 (어떤 버튼인지 알아야 삭제하니까) parentNode 썼음 
     const btn = event.target;
