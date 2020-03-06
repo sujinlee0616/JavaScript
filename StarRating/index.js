@@ -58,7 +58,9 @@ function getRatings(){
 
         // Set width of stars-inner to percentage
         document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded;
-    
+        // 아래에는 회색 별(.stars-outer)가 있고, 그 위에 노란색 별(.stars-inner)가 오는데, 
+        // 이 노란색 별의 width를 조정. ex) .stars-inner의 width를 90%로 준다.
+
         // Add number rating
         document.querySelector(`.${rating} .number-rating`).innerHTML = ratings[rating];
 
